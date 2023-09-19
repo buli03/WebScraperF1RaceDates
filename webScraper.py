@@ -23,6 +23,7 @@ driver = webdriver.Chrome()
 driver.get("https://www.formula1.com/en/racing/2023.html")
 pageSource = driver.page_source
 soup = BeautifulSoup(pageSource, 'html.parser')
+driver.quit()
 
 allPastEventsContainer = soup.find('div', 'row completed-events') 
 allPastEvents = allPastEventsContainer.find_all('div','col-12 col-sm-6 col-lg-4 col-xl-3')
